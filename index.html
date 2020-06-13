@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JJ Converter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="col-md-8">
+<ul class="nav nav-tabs p-2">
+  <li class="active"><a class="bg-success"data-toggle="tab" href="#home">Temperature</a></li>
+  <li><a data-toggle="tab" href="#menu1">Weight</a></li>
+  <li><a data-toggle="tab" href="#menu2">Length</a></li>
+  <li><a data-toggle="tab" href="#menu3">Time</a></li>
+</ul>
+
+<div class="tab-content well">
+  <div id="home" class="tab-pane active">
+<h3>Temperature Converter</h3>
+<p>Insert a number into one of the input fields below:</p>
+<form>
+   <div class="row">
+   	<div class="col-md-6">
+  <div class="form-group">
+    <label>Celsius:</label>
+	<input class="form-control" type="number" id="inputCelsius" onchange ="celsiusConverter(this.value)" oninput="celsiusConverter(this.value)">
+  </div>
+  <div class="form-group">
+    <label>Fahrenheit:</label> 
+    <input class="form-control"type="number" id="inputFahrenheit" onchange="fahrenheitConverter(this.value)" oninput="fahrenheitConverter(this.value)">
+  </div>
+  <div class="form-group">
+    <label>Kelvin:</label>
+     <input class="form-control"type="text" id="inputKelvin" onchange="kelvinConverter(this.value)" oninput="kelvinConverter(this.value)"><br>
+    <input class="btn btn-success" type="Reset" value="Reset" onclick="resetTemp()"/>
+</div>
+</div>
+</div>
+</form>
+</div>
+  <div id="menu1" class="tab-pane fade">
+    <h3>Weight Converter</h3>
+     <p>Insert a number into one of the input fields below:</p>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="form-group">
+  <label>Kilograms:</label>
+  <input class="form-control" type="number" id="inputKilograms" onchange ="kiloConverter(this.value)" oninput="kiloConverter(this.value)">
+  </div>
+  <div class="form-group">
+  <label>Grams:</label>
+  <input class="form-control" type="number" id="inputGrams" onchange ="gramConverter(this.value)" oninput="gramConverter(this.value)">
+  </div>
+ </div>
+<div class="col-md-6">
+<div class="form-group">
+ <label>Pounds:</label>
+ <input class="form-control" type="number" id="inputPounds" onchange ="poundConverter(this.value)" oninput="poundConverter(this.value)">
+</div>
+<div class="form-group">
+ <label>Ounces:</label>
+ <input class="form-control" type="number" id="inputOunces" onchange ="ounceConverter(this.value)" oninput="ounceConverter(this.value)">
+</div>
+</div>
+<div class="form-group">
+ <input class="btn btn-success" id="res" type="Reset" value="Reset" onclick="resetWeight()"/>
+</div>
+</div>
+</div>
+
+
+<div id="menu2" class="tab-pane fade">
+  <h3>Length Converter</h3>
+  <p>Insert a number into one of the input fields below:</p>
+ <div class="row">
+ <div class="col-md-6">
+  <div class="form-group">
+    <label>Kilometers:</label>
+    <input class="form-control" type="number" id="inputKilometers" onchange ="kilomConverter(this.value)" oninput="kilomConverter(this.value)"></p>
+  </div>
+
+  <div class="form-group">
+    <label>Meters:</label>
+    <input class="form-control" type="number" id="inputMeters" onchange ="meterConverter(this.value)" oninput="meterConverter(this.value)">
+  </div>
+
+  <div class="form-group">
+    <label>Cm:</label>
+    <input class="form-control" type="number" id="inputCm" onchange ="cmConverter(this.value)" oninput="cmConverter(this.value)">
+  </div>
+ </div>
+
+<div class="col-md-6">
+  <div class="form-group">
+   <label>Inches:</label> 
+   <input class="form-control" type="number" id="inputInches" onchange ="inchConverter(this.value)" oninput="inchConverter(this.value)">
+  </div>
+
+  <div class="form-group">
+   <label>Feet:</label>
+   <input class="form-control" type="number" id="inputFeet" onchange ="feetConverter(this.value)" oninput="feetConverter(this.value)">
+  </div>
+
+  <div class="form-group">
+   <label>Yards:</label>
+   <input class="form-control" type="number" id="inputYards" onchange ="yardConverter(this.value)" oninput="yardConverter(this.value)">
+  </div>
+
+  <div class="form-group">
+   <label>Miles:</label>
+   <input class="form-control" type="number" id="inputMiles" onchange ="mileConverter(this.value)" oninput="mileConverter(this.value)">
+  </div>
+</div>
+  <div class="form-group">
+   <input class="btn btn-success" id="rese" type="Reset" value="Reset" onclick="resetLength()"/>
+  </div>
+</div>
+</div>
+
+<div id="menu3" class="tab-pane fade">
+  <h3>Time Converter</h3>
+  <p>Insert a number into one of the input fields below:</p>
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+   <label>Hours:</label>
+   <input class="form-control" type="number" id="inputHours" onchange ="hourConverter(this.value)" oninput="hourConverter(this.value)">
+</div>
+
+<div class="form-group">
+   <label>Minutes:</label>
+   <input class="form-control" type="number" id="inputMinutes" onchange ="minConverter(this.value)" oninput="minConverter(this.value)">
+</div>
+
+ <div class="form-group">
+   <label>Seconds:</label>
+   <input class="form-control" type="number" id="inputSeconds" onchange ="secConverter(this.value)" oninput="secConverter(this.value)">
+ </div>
+</div>
+
+<div class="col-md-6">
+ <div class="form-group">
+   <label>Days:</label>
+   <input class="form-control" type="number" id="inputDays" onchange ="dayConverter(this.value)" oninput="dayConverter(this.value)">
+ </div>
+
+ <div class="form-group">
+   <label>Weeks:</label>
+   <input class="form-control" type="number" id="inputWeeks" onchange ="weekConverter(this.value)" oninput="weekConverter(this.value)">
+ </div>
+
+ <div class="form-group">
+   <label>Months:</label>
+   <input class="form-control" type="number" id="inputMonths" onchange ="monthConverter(this.value)" oninput="monthConverter(this.value)">
+ </div>
+
+ <div class="form-group">
+   <label>Years:</label>
+   <input class="form-control" type="number" id="inputYears" onchange ="yearConverter(this.value)" oninput="yearConverter(this.value)">
+ </div>
+</div>
+ <div class="form-group">
+   <input class="btn btn-success" id="reset" type="Reset" value="Reset" onclick="resetTime()"/>
+ </div>
+</div>
+</div>
+</div>
+<small class="copyright"><em>Copyright &copy; 2020 by Jonathan Juarez</em></small>
+</div>
+</div>
+   <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
